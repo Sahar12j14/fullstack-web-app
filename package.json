@@ -18,10 +18,10 @@
   "author": "kirill",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1",
+    "babel-plugin-handlebars-inline-precompile": "^2.1.1",
     "css-loader": "^5.0.1",
     "eslint": "^7.16.0",
-    "babel-plugin-handlebars-inline-precompile": "^2.1.1",
+    "express": "^4.17.1",
     "hbs": "^4.1.1",
     "lodash.template": "^4.5.0",
     "npm-watch": "^0.7.0",

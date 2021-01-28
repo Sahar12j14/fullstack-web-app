@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>fullstack</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <script src="https://twitter.github.io/typeahead.js/js/handlebars.js"></script>
+    <script id="store-template" type="text/x-handlebars-template">
+      <tr>
+        <th class='table-column-name'>
+          Product Name
+        </th>
+        <th class='table-column-name'>
+          Amount
+        </th>
+        <th class='table-column-name'>
+          Price per one
+        </th>
+        <th>
+          Buttons
+        </th>
+      </tr>
+      {{#each productsList}}
+        <tr>
+          <td class='table-column'>
+            <input
+              type='text'
+              class='{{id}} table-columninput-name table-columninput inputs'
+              value='{{product_name}}'
+              readonly
+            />
+          </td>
+          <td class='table-column'>
+            <input
+              type='text'
+              class='{{id}} table-columninput-count table-columninput inputs'
+              value='{{product_amount}}'
+              readonly
+            />
+          </td>
+          <td class='table-column'>
+            <input
+              type='text'
+              class='{{id}} table-columninput-priceForOne table-columninput inputs'
+              value='{{product_price}}'
+              readonly
+            />
+          </td>
+          <td class='table-column'>
+            <button class='button-delete' id='delete-{{id}}'>
+              Delete
+            </button>
+          </td>
+        </tr>
+      {{/each}}
+      <tr>
+        <td class='products__element' colspan='5'>
+          <button class='button-add'>
+            Add product
+          </button>
+        </td>
+      </tr>
+    </script>
+    <table id="result-table" class="result-table" cellspacing="1" cellpadding="2"></table>
+
+    <div class="form form--add">
+      <div class="form-content">
+        <span class="form-close">&times;</span>
+        <h2>Add product</h2>
+        <form class="add-product">
+          <label for="name">Name:</label>
+          <input type="text" name="name" class="add-product-name" required />
+          <label for="amount">Amount:</label>
+          <input type="text" name="amount" class="add-product-amount" required />
+          <label for="price">Price:</label>
+          <input type="text" name="price" class="add-product-price" required />
+          <button>Add product</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

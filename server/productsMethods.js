@@ -2,20 +2,19 @@ const fs = require('fs');
 const path = require('path');
 //получение всех продуктов
 module.exports.getAllElements = function getAllElements(fileJSON) {
-  try{
-  return JSON.parse(
-    fs.readFileSync(fileJSON, 'utf8', (err, data) => {
-      if (err) {
-        console.error(err);
-        return;
-      }
-    })
-  );
-  }
-  catch(err) {
+  try {
+    return JSON.parse(
+      fs.readFileSync(fileJSON, 'utf8', (err, data) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
+      })
+    );
+  } catch (err) {
     console.error({ error: 'Caanot read file' });
   }
-}
+};
 //получение продукта по указанному id
 module.exports.getElementId = function getElementId(fileJSON, id) {
   let product;
